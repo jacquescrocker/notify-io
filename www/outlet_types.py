@@ -55,6 +55,7 @@ class Prowl(BaseOutlet):
             'application': notice.source.source_name,
             'event': notice.title or '',
             'description': notice.text,
+            'url': notice.link or '',
 	    }
 		data = urllib.urlencode(utf8encode(data))
 		urlfetch.fetch("https://prowl.weks.net/publicapi/add/", method='POST', payload=data, headers={'Content-Type': 'application/x-www-form-urlencoded'})
